@@ -27,8 +27,9 @@ yarn install
 ```
 yarn start
 ```
-
+you can access the project on localhost:3000
 ### Production
 ```
 yarn build
 ```
+
