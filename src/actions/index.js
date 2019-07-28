@@ -93,14 +93,12 @@ export const fetchPreferedShops = (page ,size ,longitude,latitude) => {
         });
     };
 };
-const config = {
-    headers: {
-        authorization:  "Bearer " + localStorage.getItem('token')
-    }
-};
+
 export const updateShopLikeStatus = (status,id) => {
     return (dispatch) => {
-              axios.put(`${ROOT_URL}/shops/likeStatus?likeStatus=${status}&shopId=${id}`, {}  ,config)
+              axios.put(`${ROOT_URL}/shops/likeStatus?likeStatus=${status}&shopId=${id}`, {}  ,   {headers: {
+                authorization:  "Bearer " + localStorage.getItem('token')}
+            })
             .then(response => {
                 dispatch({ 
                     type: UPDATE_SHOP_LIKE_STATUS,
